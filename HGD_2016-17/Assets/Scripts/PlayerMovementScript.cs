@@ -55,8 +55,6 @@ public class PlayerMovementScript : MonoBehaviour {
 			Vector3 v3 = (transform.position - sphere.transform.position);
 			Vector2 v2 = new Vector2 (v3.x, v3.y).normalized.Rotate (90f);
 			GetComponent<Rigidbody2D> ().AddForce (v2 * movementForce);
-		} else {
-			GetComponent<Rigidbody2D> ().AddForce (new Vector2 (-1 * movementForce, 0));
 		}
 	}
 
@@ -66,8 +64,6 @@ public class PlayerMovementScript : MonoBehaviour {
 			Vector3 v3 = (transform.position - sphere.transform.position);
 			Vector2 v2 = new Vector2 (v3.x, v3.y).normalized.Rotate (-90f);
 			GetComponent<Rigidbody2D> ().AddForce (v2 * movementForce);
-		} else {
-			GetComponent<Rigidbody2D> ().AddForce (new Vector2 (movementForce, 0));
 		}
 	}
 		

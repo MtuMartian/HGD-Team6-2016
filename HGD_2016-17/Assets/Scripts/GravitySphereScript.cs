@@ -19,10 +19,6 @@ public class GravitySphereScript : MonoBehaviour {
 		if (activated) {
 			player.GetComponent<Rigidbody2D> ().AddForce ((transform.position - player.transform.position)
 			/ ((float)Math.Pow (Vector2.Distance (transform.position, player.transform.position), 2)) * strength);
-
-			player.GetComponent<Rigidbody2D> ().gravityScale = 0f;
-		} else {
-			player.GetComponent<Rigidbody2D> ().gravityScale = 1f;
 		}
 	}
 }
