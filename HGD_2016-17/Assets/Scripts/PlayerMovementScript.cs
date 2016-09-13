@@ -8,7 +8,8 @@ public class PlayerMovementScript : MonoBehaviour {
 	public float movementForce;
 	public float jumpForce;
 	public GameObject groundCheck;
-	public List<GravitySphereScript> spheres;
+	public List<GravitySphereScript> influencingSpheres;
+	public List<GameObject> touchingJumpableObjects;
 
 	/* Note: 
 	 * Properties are members that function as a variable but allow you to set a custom getter and setter.
@@ -31,7 +32,7 @@ public class PlayerMovementScript : MonoBehaviour {
 	#endregion
 
 	void Start () {
-		spheres = new List<GravitySphereScript> ();
+		influencingSpheres = new List<GravitySphereScript> ();
 	}
 
 	void FixedUpdate () {
@@ -45,13 +46,16 @@ public class PlayerMovementScript : MonoBehaviour {
 		if (Input.GetKey (KeyCode.D))
 			MoveRight ();
 
-		if (Input.GetKeyDown (KeyCode.Space) && isGrounded)
-			GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0, jumpForce));
+		if (Input.GetKey(KeyCode.Space))
+			Jump();
+		
+		//if (Input.GetKeyDown (KeyCode.Space) && isGrounded)
+		//	GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0, jumpForce));
 	}
 
 	private void MoveLeft() {
-		if (spheres.Any ()) {
-			var sphere = spheres.First ();
+		if (influencingSpheres.Any ()) {
+			var sphere = influencingSpheres.First ();
 			Vector3 v3 = (transform.position - sphere.transform.position);
 			Vector2 v2 = new Vector2 (v3.x, v3.y).normalized.Rotate (90f);
 			GetComponent<Rigidbody2D> ().AddForce (v2 * movementForce);
@@ -59,27 +63,46 @@ public class PlayerMovementScript : MonoBehaviour {
 	}
 
 	private void MoveRight() {
-		if (spheres.Any ()) {
-			var sphere = spheres.First ();
+		if (influencingSpheres.Any ()) {
+			var sphere = influencingSpheres.First ();
 			Vector3 v3 = (transform.position - sphere.transform.position);
 			Vector2 v2 = new Vector2 (v3.x, v3.y).normalized.Rotate (-90f);
 			GetComponent<Rigidbody2D> ().AddForce (v2 * movementForce);
 		}
 	}
-		
-	void OnTriggerEnter2D(Collider2D trigger)
-	{
-		if (trigger.gameObject.layer == LayerMask.NameToLayer ("GravitySpheres")) {
-			trigger.gameObject.GetComponent<GravitySphereScript> ().activated = true;
-			spheres.Add(trigger.gameObject.GetComponent<GravitySphereScript>());
+
+	private void Jump() {
+		if (touchingJumpableObjects.Any ()) {
+			
+			var sphere = influencingSpheres.Any() ? influencingSpheres.First().gameObject : touchingJumpableObjects.First ();
+			Vector2 v2 = transform.position - sphere.transform.position;
+			GetComponent<Rigidbody2D> ().AddForce (v2.normalized * jumpForce);
 		}
 	}
 
-	void OnTriggerExit2D(Collider2D trigger)
-	{
+	void OnCollisionEnter2D (Collision2D obj) {
+		if (obj.gameObject.layer == LayerMask.NameToLayer ("GravitySpheres") || obj.gameObject.layer == LayerMask.NameToLayer("Ground")) {
+			touchingJumpableObjects.Add (obj.gameObject);
+		}
+	}
+
+	void OnCollisionExit2D (Collision2D obj) {
+		if (obj.gameObject.layer == LayerMask.NameToLayer ("GravitySpheres") || obj.gameObject.layer == LayerMask.NameToLayer("Ground")) {
+			touchingJumpableObjects.Remove (obj.gameObject);
+		}
+	}
+		
+	void OnTriggerEnter2D(Collider2D trigger) {
+		if (trigger.gameObject.layer == LayerMask.NameToLayer ("GravitySpheres")) {
+			trigger.gameObject.GetComponent<GravitySphereScript> ().activated = true;
+			influencingSpheres.Add(trigger.gameObject.GetComponent<GravitySphereScript>());
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D trigger) {
 		if (trigger.gameObject.layer == LayerMask.NameToLayer ("GravitySpheres")) {
 			trigger.gameObject.GetComponent<GravitySphereScript> ().activated = false;
-			spheres.Remove (trigger.gameObject.GetComponent<GravitySphereScript> ());
+			influencingSpheres.Remove (trigger.gameObject.GetComponent<GravitySphereScript> ());
 		}
 	}
 }

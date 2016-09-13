@@ -37,8 +37,8 @@ public class CameraFollow : MonoBehaviour {
 	}
 
 	void UpdateRotation() {
-		if (playerScript.spheres.Any ()) {
-			var sphere = playerScript.spheres.First ();
+		if (playerScript.influencingSpheres.Any ()) {
+			var sphere = playerScript.influencingSpheres.First ();
 			Vector3 v3 = playerTransform.position - sphere.transform.position;
 			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.FromToRotation(Vector3.up, v3), rotationalDampening);
 		}
