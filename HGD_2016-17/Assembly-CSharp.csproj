@@ -45,8 +45,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\ExtensionMethods.cs" />
      <Compile Include="Assets\Scripts\Follow.cs" />
-     <Compile Include="Assets\Scripts\GravityManagerScript.cs" />
+     <Compile Include="Assets\Scripts\GravitySphereScript.cs" />
      <Compile Include="Assets\Scripts\PlayerMovementScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
