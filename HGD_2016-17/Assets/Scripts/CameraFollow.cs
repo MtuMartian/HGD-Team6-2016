@@ -40,6 +40,7 @@ public class CameraFollow : MonoBehaviour {
 		if (playerScript.influencingSpheres.Any ()) {
 			var sphere = playerScript.influencingSpheres.First ();
 			Vector3 v3 = playerTransform.position - sphere.transform.position;
+			v3 = new Vector3 (v3.x, v3.y, 0);
 			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.FromToRotation(Vector3.up, v3), rotationalDampening);
 		}
 	}
