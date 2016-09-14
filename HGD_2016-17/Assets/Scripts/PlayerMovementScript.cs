@@ -48,9 +48,6 @@ public class PlayerMovementScript : MonoBehaviour {
 
 		if (Input.GetKey(KeyCode.Space))
 			Jump();
-		
-		//if (Input.GetKeyDown (KeyCode.Space) && isGrounded)
-		//	GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0, jumpForce));
 	}
 
 	private void MoveLeft() {
@@ -73,7 +70,6 @@ public class PlayerMovementScript : MonoBehaviour {
 
 	private void Jump() {
 		if (touchingJumpableObjects.Any ()) {
-			
 			var sphere = influencingSpheres.Any() ? influencingSpheres.First().gameObject : touchingJumpableObjects.First ();
 			Vector2 v2 = transform.position - sphere.transform.position;
 			GetComponent<Rigidbody2D> ().AddForce (v2.normalized * jumpForce);
