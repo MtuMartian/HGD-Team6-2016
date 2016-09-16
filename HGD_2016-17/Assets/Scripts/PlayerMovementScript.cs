@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ public class PlayerMovementScript : MonoBehaviour {
 	public GameObject groundCheck;
 	public List<GravitySphereScript> influencingSpheres;
 	public List<GameObject> touchingJumpableObjects;
+	private GameManagerScript gameManager;
 
 	/* Note: 
 	 * Properties are members that function as a variable but allow you to set a custom getter and setter.
@@ -33,20 +35,23 @@ public class PlayerMovementScript : MonoBehaviour {
 
 	void Start () {
 		influencingSpheres = new List<GravitySphereScript> ();
+		gameManager = GameObject.FindWithTag ("GameManager").GetComponent<GameManagerScript> ();
 	}
 
 	void FixedUpdate () {
+		if (gameManager.isPaused)
+			return;
 		CheckKeyboardInput ();
 	}
 
 	private void CheckKeyboardInput() {
-		if (Input.GetKey (KeyCode.A))
+		if (Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.LeftArrow))
 			MoveLeft ();
 		
-		if (Input.GetKey (KeyCode.D))
+		if (Input.GetKey (KeyCode.D) || Input.GetKey (KeyCode.RightArrow))
 			MoveRight ();
 
-		if (Input.GetKey(KeyCode.Space))
+		if (Input.GetKey(KeyCode.Space) || Input.GetKey (KeyCode.UpArrow))
 			Jump();
 	}
 
