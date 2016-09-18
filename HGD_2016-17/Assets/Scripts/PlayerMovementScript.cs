@@ -51,7 +51,7 @@ public class PlayerMovementScript : MonoBehaviour {
 		if (Input.GetKey (KeyCode.D) || Input.GetKey (KeyCode.RightArrow))
 			MoveRight ();
 
-		if (Input.GetKey(KeyCode.Space) || Input.GetKey (KeyCode.UpArrow))
+		if (Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown (KeyCode.UpArrow))
 			Jump();
 	}
 
