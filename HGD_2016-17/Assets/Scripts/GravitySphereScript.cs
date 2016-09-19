@@ -9,7 +9,6 @@ public class GravitySphereScript : MonoBehaviour {
 	public GameObject player;
 	public bool activated;
 	public float strength = 10;
-    public Button btn;
 
 	// Use this for initialization
 	void Start () {
