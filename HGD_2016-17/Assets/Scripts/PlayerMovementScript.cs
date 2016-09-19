@@ -6,8 +6,8 @@ using System.Collections.Generic;
 
 public class PlayerMovementScript : MonoBehaviour {
 
-	public float movementForce;
-	public float jumpForce;
+	public float movementForce = 12f;
+	public float jumpForce = 1400f;
 	public GameObject groundCheck;
 	public List<GravitySphereScript> influencingSpheres;
 	public List<GameObject> touchingJumpableObjects;
@@ -45,7 +45,7 @@ public class PlayerMovementScript : MonoBehaviour {
 	}
 
 	private void CheckKeyboardInput() {
-		if (Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.LeftArrow))
+		if (Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.LeftArrow) || Input.GetKey("a"))
 			MoveLeft ();
 		
 		if (Input.GetKey (KeyCode.D) || Input.GetKey (KeyCode.RightArrow))
