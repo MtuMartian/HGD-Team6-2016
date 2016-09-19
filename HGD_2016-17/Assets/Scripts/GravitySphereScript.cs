@@ -22,9 +22,5 @@ public class GravitySphereScript : MonoBehaviour {
 			player.GetComponent<Rigidbody2D> ().AddForce ((transform.position - player.transform.position)
 			/ ((float)Math.Pow (Vector2.Distance (transform.position, player.transform.position), 2)) * strength);
 		}
-        btn.onClick.AddListener( delegate
-        {
-            Debug.Log("Test");
-        });
 	}
 }
