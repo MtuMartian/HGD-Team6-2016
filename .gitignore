@@ -1,2 +1,8 @@
-# We should ignore all Temp files
-Temp/
+HGD_2016-17/Temp*
+HGD_2016-17/Library*
+HGD_2016-17/ProjectSettings*
+HGD_2016-17/HGD_2016-17.CSharp.csproj
+HGD_2016-17/HGD_2016-17.userprefs
+HGD_2016-17/Build.exe
+HGD_2016-17/Build_Data
+HGD_2016-17/.vs/
