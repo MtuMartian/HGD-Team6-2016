@@ -12,6 +12,7 @@ public class PlayerMovementScript : MonoBehaviour {
 	public List<GravitySphereScript> influencingSpheres;
 	public List<GameObject> touchingJumpableObjects;
 	private GameManagerScript gameManager;
+	private float lastJump = 0f;
 
 	/* Note: 
 	 * Properties are members that function as a variable but allow you to set a custom getter and setter.
@@ -74,10 +75,14 @@ public class PlayerMovementScript : MonoBehaviour {
 	}
 
 	private void Jump() {
+		float curTime = Time.time;
+		if (curTime - lastJump < 0.5f)
+			return;
 		if (touchingJumpableObjects.Any ()) {
 			var sphere = influencingSpheres.Any() ? influencingSpheres.First().gameObject : touchingJumpableObjects.First ();
 			Vector2 v2 = transform.position - sphere.transform.position;
 			GetComponent<Rigidbody2D> ().AddForce (v2.normalized * jumpForce);
+			lastJump = curTime;
 		}
 	}
 

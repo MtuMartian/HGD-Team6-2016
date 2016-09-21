@@ -15,7 +15,7 @@ public class MainScreenUIManger : MonoBehaviour {
         
         newGameBtn.onClick.AddListener(delegate
         {
-            SceneManager.LoadScene("MechanicsDevelopmentScene");
+            SceneManager.LoadScene("MilesTutorial01");
             Debug.Log("New Game Button was pressed");
         });
         resumeBtn.onClick.AddListener(delegate
@@ -28,7 +28,6 @@ public class MainScreenUIManger : MonoBehaviour {
         });
         exitBtn.onClick.AddListener(delegate
         {
-
             Application.Quit();
             Debug.Log("Exit Button was pressed");
         });

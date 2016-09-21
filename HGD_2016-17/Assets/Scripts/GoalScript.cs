@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class GoalScript : MonoBehaviour {
@@ -6,6 +7,7 @@ public class GoalScript : MonoBehaviour {
     public GameObject player;
     public GameObject uiManager;
     private UIManagerScript uiManagerScript;
+	public string nextLevelName;
 
     // Use this for initialization
     void Start () {
@@ -18,7 +20,13 @@ public class GoalScript : MonoBehaviour {
 	}
 
     void OnCollisionEnter2D (Collision2D obj) {
-        if (obj.gameObject == player)
-            uiManagerScript.DisplayMessage("You win!", "(Win handling will be updated later...)", 10000);
+		if (obj.gameObject == player)
+			SceneManager.LoadScene (nextLevelName);
+
+			//uiManagerScript.DisplayMessage("You win!", "(Win handling will be updated later...)", 10000);
     }
+
+	void GoToNextLevel() {
+		SceneManager.LoadScene (nextLevelName);
+	}
 }
