@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/MechanicsDevelopmentScene.unity
+- path: Assets/Scenes/MilesTutorial01.unity
   isLoaded: 1
   isActive: 1
