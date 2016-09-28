@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/MilesTutorial01.unity
-=======
-- path: Assets/Scenes/MilesTutorial02.unity
->>>>>>> origin/master
+- path: Assets/Scenes/TitleMenu.unity
   isLoaded: 1
   isActive: 1
