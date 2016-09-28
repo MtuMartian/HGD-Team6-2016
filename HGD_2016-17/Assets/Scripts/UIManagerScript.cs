@@ -11,6 +11,7 @@ public class UIManagerScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gameManager = GameObject.FindWithTag ("GameManager").GetComponent<GameManagerScript>();
+		ClearMessage ();
 	}
 	
 	// Update is called once per frame
