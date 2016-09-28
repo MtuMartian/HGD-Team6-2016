@@ -13,6 +13,7 @@ public class PlayerMovementScript : MonoBehaviour {
 	public List<GameObject> touchingJumpableObjects;
 	private GameManagerScript gameManager;
 	private float lastJump = 0f;
+	private float previousDrag;
 
 	/* Note: 
 	 * Properties are members that function as a variable but allow you to set a custom getter and setter.
@@ -37,6 +38,7 @@ public class PlayerMovementScript : MonoBehaviour {
 	void Start () {
 		influencingSpheres = new List<GravitySphereScript> ();
 		gameManager = GameObject.FindWithTag ("GameManager").GetComponent<GameManagerScript> ();
+		previousDrag = GetComponent<Rigidbody2D> ().drag;
 	}
 
 	void FixedUpdate () {
@@ -102,6 +104,7 @@ public class PlayerMovementScript : MonoBehaviour {
 		if (trigger.gameObject.layer == LayerMask.NameToLayer ("GravitySpheres")) {
 			trigger.gameObject.GetComponent<GravitySphereScript> ().activated = true;
 			influencingSpheres.Add(trigger.gameObject.GetComponent<GravitySphereScript>());
+			GetComponent<Rigidbody2D> ().drag = previousDrag;
 		}
 	}
 
@@ -109,6 +112,10 @@ public class PlayerMovementScript : MonoBehaviour {
 		if (trigger.gameObject.layer == LayerMask.NameToLayer ("GravitySpheres")) {
 			trigger.gameObject.GetComponent<GravitySphereScript> ().activated = false;
 			influencingSpheres.Remove (trigger.gameObject.GetComponent<GravitySphereScript> ());
+			if (!influencingSpheres.Any ()) {
+				previousDrag = GetComponent<Rigidbody2D> ().drag;
+				GetComponent<Rigidbody2D> ().drag = 0f;
+			}
 		}
 	}
 }
