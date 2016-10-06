@@ -6,7 +6,8 @@ using System.Collections.Generic;
 
 public class PlayerMovementScript : MonoBehaviour {
 
-	public float movementForce = 12f;
+	public float movementForce = 48f;
+    public float maxSpeed = 20f;
 	public float jumpForce = 1400f;
 	public GameObject groundCheck;
 	public List<GravitySphereScript> influencingSpheres;
@@ -15,24 +16,21 @@ public class PlayerMovementScript : MonoBehaviour {
 	private float lastJump = 0f;
 	private float previousDrag;
 
-	/* Note: 
-	 * Properties are members that function as a variable but allow you to set a custom getter and setter.
-	 * This reduces verbosity of code and allows you to pair properties with fields to easily define the
-	 * accessors to variables. I will likely be using properties a lot, and be putting them inside
-	 * of a 'Properties' region. 
-	 * 
-	 * If you want to read more about properties I would suggest the following pages:
-	 * https://msdn.microsoft.com/en-us/library/x9fsa0sw.aspx
-	 * https://msdn.microsoft.com/en-us/library/w86s7x04.aspx
-	 */
-	#region Properties
-	private bool isGrounded 
+    #region Properties
+    private bool isGrounded 
 	{
 		get 
 		{
 			return Physics2D.Linecast(transform.position, groundCheck.transform.position, 1 << LayerMask.NameToLayer("Ground"));  
 		}
 	}
+    private GravitySphereScript influencingSphere
+    {
+        get //TODO: Update our method for finding the influencing sphere
+        {
+            return influencingSpheres.Any() ? influencingSpheres.First() : null;
+        }
+    }
 	#endregion
 
 	void Start () {
@@ -63,7 +61,11 @@ public class PlayerMovementScript : MonoBehaviour {
 			var sphere = influencingSpheres.First ();
 			Vector3 v3 = (transform.position - sphere.transform.position);
 			Vector2 v2 = new Vector2 (v3.x, v3.y).normalized.Rotate (90f);
-			GetComponent<Rigidbody2D> ().AddForce (v2 * movementForce);
+            Vector2 currentVelocity = GetComponent<Rigidbody2D>().velocity;
+            if (Vector3.Project(currentVelocity, v2).magnitude <= maxSpeed) {
+                GetComponent<Rigidbody2D>().AddForce(v2 * movementForce);
+                //GetComponent<Rigidbody2D>().AddTorque(20f); !! We should consider adding torque as well to make the movement more fluid !!
+            }
 		}
 	}
 
@@ -72,8 +74,12 @@ public class PlayerMovementScript : MonoBehaviour {
 			var sphere = influencingSpheres.First ();
 			Vector3 v3 = (transform.position - sphere.transform.position);
 			Vector2 v2 = new Vector2 (v3.x, v3.y).normalized.Rotate (-90f);
-			GetComponent<Rigidbody2D> ().AddForce (v2 * movementForce);
-		}
+            Vector2 currentVelocity = GetComponent<Rigidbody2D>().velocity;
+            if (Vector3.Project(currentVelocity, v2).magnitude <= maxSpeed) {
+                GetComponent<Rigidbody2D>().AddForce(v2 * movementForce);
+                //GetComponent<Rigidbody2D>().AddTorque(-20f);
+            }
+        }
 	}
 
 	private void Jump() {
