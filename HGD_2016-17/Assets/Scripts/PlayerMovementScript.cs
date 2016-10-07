@@ -21,10 +21,11 @@ public class PlayerMovementScript : MonoBehaviour {
 	{
 		get 
 		{
-			return Physics2D.Linecast(transform.position, groundCheck.transform.position, 1 << LayerMask.NameToLayer("Ground"));  
+			return Physics2D.Linecast(transform.position, groundCheck.transform.position, 1 << LayerMask.NameToLayer("Ground"))
+				|| Physics2D.Linecast(transform.position, groundCheck.transform.position, 1 << LayerMask.NameToLayer("GravitySpheres"));  
 		}
 	}
-    private GravitySphereScript influencingSphere
+    public GravitySphereScript influencingSphere
     {
         get //TODO: Update our method for finding the influencing sphere
         {
@@ -53,7 +54,7 @@ public class PlayerMovementScript : MonoBehaviour {
 			MoveRight ();
 
 		if (Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown (KeyCode.UpArrow))
-			Jump();
+			Jump ();
 	}
 
 	private void MoveLeft() {
@@ -84,9 +85,9 @@ public class PlayerMovementScript : MonoBehaviour {
 
 	private void Jump() {
 		float curTime = Time.time;
-		if (curTime - lastJump < 0.5f)
+		if (curTime - lastJump < 0.1f)
 			return;
-		if (touchingJumpableObjects.Any ()) {
+		if (isGrounded) {
 			var sphere = influencingSpheres.Any() ? influencingSpheres.First().gameObject : touchingJumpableObjects.First ();
 			Vector2 v2 = transform.position - sphere.transform.position;
 			GetComponent<Rigidbody2D> ().AddForce (v2.normalized * jumpForce);
