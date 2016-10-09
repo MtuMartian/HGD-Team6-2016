@@ -4,7 +4,7 @@ using System.IO;
 
 public class GameManagerScript : MonoBehaviour {
 
-	public bool isPaused;
+	public bool isPaused = false;
 
 	// Use this for initialization
 	void Start () {
@@ -12,7 +12,10 @@ public class GameManagerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Space))
-			isPaused = false;
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            isPaused = !isPaused;
+            Time.timeScale = isPaused ? 0 : 1;
+        }    
 	}
 }

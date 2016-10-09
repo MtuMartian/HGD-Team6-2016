@@ -16,9 +16,10 @@ public class UIManagerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Space))
-			ClearMessage ();
-
+        if (gameManager.isPaused)
+            DisplayMessage("Game Paused", "Press 'Escape' To Continue");
+        else
+            ClearMessage();
 	}
 
 	public void DisplayMessage(string message, string subMessage = "", int time = 0) {
