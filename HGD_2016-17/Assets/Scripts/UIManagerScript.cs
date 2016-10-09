@@ -8,6 +8,7 @@ public class UIManagerScript : MonoBehaviour {
 	public Text mainText;
     public Text subText;
     public Button resumeBtn;
+    public Button restartBtn;
     public Button mainMenuBtn;
     public Button quitBtn;
 	private GameManagerScript gameManager;
@@ -16,6 +17,7 @@ public class UIManagerScript : MonoBehaviour {
 	void Start () {
 		gameManager = GameObject.FindWithTag ("GameManager").GetComponent<GameManagerScript>();
         resumeBtn.onClick.AddListener(() => gameManager.isPaused = false);
+        restartBtn.onClick.AddListener(() => SceneManager.LoadScene(SceneManager.GetActiveScene().name));
         mainMenuBtn.onClick.AddListener(() => SceneManager.LoadScene("TitleMenu"));
         quitBtn.onClick.AddListener(() => Application.Quit());
 
@@ -33,6 +35,8 @@ public class UIManagerScript : MonoBehaviour {
     public void DisplayMenu() {
         resumeBtn.GetComponent<Image>().enabled = true;
         resumeBtn.GetComponentInChildren<Text>().enabled = true;
+        restartBtn.GetComponent<Image>().enabled = true;
+        restartBtn.GetComponentInChildren<Text>().enabled = true;
         mainMenuBtn.GetComponent<Image>().enabled = true;
         mainMenuBtn.GetComponentInChildren<Text>().enabled = true;
         quitBtn.GetComponent<Image>().enabled = true;
@@ -42,6 +46,8 @@ public class UIManagerScript : MonoBehaviour {
     public void HideMenu() {
         resumeBtn.GetComponent<Image>().enabled = false;
         resumeBtn.GetComponentInChildren<Text>().enabled = false;
+        restartBtn.GetComponent<Image>().enabled = false;
+        restartBtn.GetComponentInChildren<Text>().enabled = false;
         mainMenuBtn.GetComponent<Image>().enabled = false;
         mainMenuBtn.GetComponentInChildren<Text>().enabled = false;
         quitBtn.GetComponent<Image>().enabled = false;
