@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GroundCheckFollowScript : MonoBehaviour {
 
-	public GameObject player;
+	private GameObject player;
 	public float offsetDistance = 3.8f;
 	private GameObject currentSphere
 	{
@@ -17,8 +17,8 @@ public class GroundCheckFollowScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        player = GameObject.FindWithTag("Player");
+    }
 	
 	// Update is called once per frame
 	void Update () {

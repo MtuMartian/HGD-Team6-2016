@@ -4,7 +4,7 @@ using System.Collections;
 public class FireBallRotateScript : MonoBehaviour {
 
 	public GameObject parent;
-	public GameObject player;
+	private GameObject player;
 	public GameObject uiManager;
 	public float rotateSpeed;
 	private UIManagerScript uiManagerScript;
@@ -12,7 +12,8 @@ public class FireBallRotateScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		uiManagerScript = uiManager.GetComponent<UIManagerScript> ();
+        GameObject.FindWithTag("Player");
+        uiManagerScript = uiManager.GetComponent<UIManagerScript> ();
 		gameManager = GameObject.FindWithTag ("GameManager").GetComponent<GameManagerScript> ();
 	}
 	

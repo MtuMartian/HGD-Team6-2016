@@ -6,14 +6,14 @@ using System.Collections.Generic;
 
 public class GravitySphereScript : MonoBehaviour {
 	
-	public GameObject player;
+	private GameObject player;
 	public bool activated;
 	public float strength = 10;
 
 	// Use this for initialization
 	void Start () {
-        
-	}
+        player = GameObject.FindWithTag("Player");
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {

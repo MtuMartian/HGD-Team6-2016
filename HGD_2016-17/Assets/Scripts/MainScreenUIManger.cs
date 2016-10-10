@@ -11,8 +11,6 @@ public class MainScreenUIManger : MonoBehaviour {
  
 	// Use this for initialization
 	void Start () {
-
-        
         newGameBtn.onClick.AddListener(delegate
         {
             SceneManager.LoadScene("MilesTutorial01");

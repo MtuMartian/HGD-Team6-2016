@@ -4,13 +4,14 @@ using System.Collections;
 
 public class GoalScript : MonoBehaviour {
 
-    public GameObject player;
+    private GameObject player;
     public GameObject uiManager;
     private UIManagerScript uiManagerScript;
 	public string nextLevelName;
 
     // Use this for initialization
     void Start () {
+        player = GameObject.FindWithTag("Player");
         uiManagerScript = uiManager.GetComponent<UIManagerScript>();
     }
 	

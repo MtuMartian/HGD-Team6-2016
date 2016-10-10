@@ -3,19 +3,13 @@ using System.Collections;
 
 public class PickupScript : MonoBehaviour {
 
-    public enum PickupType {
-        INCREASE,
-        DECREASE,
-        REVERSE
-    }
-
     public PickupType type;
-    public GameObject player;
+    private GameObject player;
 
 	// Use this for initialization
 	void Start () {
-	
-	}
+        player = GameObject.FindWithTag("Player");
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -29,5 +23,12 @@ public class PickupScript : MonoBehaviour {
             Destroy(transform.gameObject);
             player.GetComponent<PlayerMovementScript>().CollectPickup(this);
         }
+    }
+
+    public enum PickupType
+    {
+        INCREASE,
+        DECREASE,
+        REVERSE
     }
 }

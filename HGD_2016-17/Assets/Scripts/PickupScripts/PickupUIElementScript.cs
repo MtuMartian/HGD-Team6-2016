@@ -5,7 +5,7 @@ using System.Collections;
 public class PickupUIElementScript : MonoBehaviour {
 
     public Text countText;
-    public GameObject player;
+    private GameObject player;
     public PickupScript.PickupType type;
 
     private int count 
@@ -19,8 +19,8 @@ public class PickupUIElementScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
-	}
+        player = GameObject.FindWithTag("Player");
+    }
 	
 	// Update is called once per frame
 	void Update () {

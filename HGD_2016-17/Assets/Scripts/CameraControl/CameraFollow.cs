@@ -5,7 +5,7 @@ using System.Collections;
 
 public class CameraFollow : MonoBehaviour {
 
-	public GameObject player;
+	private GameObject player;
 	private Transform playerTransform;
 	private PlayerMovementScript playerScript;
 	public float dampening;
@@ -14,7 +14,8 @@ public class CameraFollow : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		playerTransform = player.transform;
+        player = GameObject.FindWithTag("Player");
+        playerTransform = player.transform;
 		playerScript = player.GetComponent<PlayerMovementScript> ();
 	}
 	
