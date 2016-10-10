@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ public class PlayerMovementScript : MonoBehaviour {
 	private GameManagerScript gameManager;
 	private float lastJump = 0f;
 	private float previousDrag;
+
+    public Dictionary<PickupScript.PickupType, int> pickupDictionary;
 
     #region Properties
     private bool isGrounded 
@@ -38,6 +41,9 @@ public class PlayerMovementScript : MonoBehaviour {
 		influencingSpheres = new List<GravitySphereScript> ();
 		gameManager = GameObject.FindWithTag ("GameManager").GetComponent<GameManagerScript> ();
 		previousDrag = GetComponent<Rigidbody2D> ().drag;
+        pickupDictionary = new Dictionary<PickupScript.PickupType, int> ();
+        foreach (PickupScript.PickupType type in Enum.GetValues(typeof(PickupScript.PickupType)))
+            pickupDictionary.Add(type, 0);
 	}
 
 	void FixedUpdate () {
@@ -55,7 +61,14 @@ public class PlayerMovementScript : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown (KeyCode.UpArrow))
 			Jump ();
-	}
+
+        if (Input.GetKeyDown(KeyCode.Keypad1))
+            UsePickup(PickupScript.PickupType.INCREASE);
+        if (Input.GetKeyDown(KeyCode.Keypad2))
+            UsePickup(PickupScript.PickupType.DECREASE);
+        if (Input.GetKeyDown(KeyCode.Keypad3))
+            UsePickup(PickupScript.PickupType.REVERSE);
+    }
 
 	private void MoveLeft() {
 		if (influencingSpheres.Any ()) {
@@ -94,6 +107,36 @@ public class PlayerMovementScript : MonoBehaviour {
 			lastJump = curTime;
 		}
 	}
+
+    public void CollectPickup(PickupScript pickUp) {
+        pickupDictionary[pickUp.type] = pickupDictionary[pickUp.type] + 1;
+    }
+
+    public void UsePickup(PickupScript.PickupType type) {
+        switch (type)
+        {
+            case PickupScript.PickupType.INCREASE:
+                if (influencingSphere != null && pickupDictionary[type] > 0) {
+                    influencingSphere.strength += 1000;
+                    pickupDictionary[type] -= 1;
+                }
+                break;
+            case PickupScript.PickupType.DECREASE:
+                if (influencingSphere != null && pickupDictionary[type] > 0) {
+                    influencingSphere.strength -= 1000;
+                    pickupDictionary[type] -= 1;
+                }
+                break;
+            case PickupScript.PickupType.REVERSE:
+                if (influencingSphere != null && pickupDictionary[type] > 0) {
+                    influencingSphere.strength *= -1;
+                    pickupDictionary[type] -= 1;
+                }
+                break;
+            default:
+                break;
+        }
+    }
 
 	void OnCollisionEnter2D (Collision2D obj) {
 		if (obj.gameObject.layer == LayerMask.NameToLayer ("GravitySpheres") || obj.gameObject.layer == LayerMask.NameToLayer("Ground")) {

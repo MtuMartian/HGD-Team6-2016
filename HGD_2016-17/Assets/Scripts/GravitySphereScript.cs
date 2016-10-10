@@ -22,4 +22,6 @@ public class GravitySphereScript : MonoBehaviour {
 			/ ((float)Math.Pow (Vector2.Distance (transform.position, player.transform.position), 2)) * strength);
 		}
 	}
+
+
 }
