@@ -15,6 +15,7 @@ public class TrampolineScript : MonoBehaviour {
 
 	}
 
+    // When an object hits the collider, apply a force on it in the direction of the jump pad
 	void OnCollisionEnter2D(Collision2D obj) {
 		Vector2 force = new Vector2 (
 			                -1 * Mathf.Sin (Mathf.Deg2Rad * transform.rotation.eulerAngles.z),

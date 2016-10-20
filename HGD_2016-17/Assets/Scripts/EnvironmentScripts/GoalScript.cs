@@ -21,13 +21,8 @@ public class GoalScript : MonoBehaviour {
 	}
 
     void OnCollisionEnter2D (Collision2D obj) {
+        // If the player colllides with the goal, go to the next level
 		if (obj.gameObject == player)
 			SceneManager.LoadScene (nextLevelName);
-
-			//uiManagerScript.DisplayMessage("You win!", "(Win handling will be updated later...)", 10000);
     }
-
-	void GoToNextLevel() {
-		SceneManager.LoadScene (nextLevelName);
-	}
 }

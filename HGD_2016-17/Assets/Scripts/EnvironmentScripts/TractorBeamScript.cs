@@ -14,6 +14,7 @@ public class TractorBeamScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        // Apply a constant force on each object within the list of contained objects
 		objects.ForEach (obj => {
 			Vector2 force = new Vector2 (
 				-1 * Mathf.Sin (Mathf.Deg2Rad * transform.rotation.eulerAngles.z),
@@ -22,10 +23,12 @@ public class TractorBeamScript : MonoBehaviour {
 		});
 	}
 
+    // When an object enters the trigger collider, add it to the list of objects
 	void OnTriggerEnter2D(Collider2D obj) {
 		objects.Add (obj.gameObject);
 	}
-
+    
+    // When an object leaves the trigger collider, remove it from the list of objects
 	void OnTriggerExit2D(Collider2D obj) {
 		objects.Remove (obj.gameObject);
 	}

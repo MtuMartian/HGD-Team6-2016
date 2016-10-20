@@ -17,11 +17,11 @@ public class GravitySphereScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        // If the gravity sphere is activated, apply a force relative to the distance between the gravity
+        // sphere and the player.
 		if (activated) {
 			player.GetComponent<Rigidbody2D> ().AddForce ((transform.position - player.transform.position)
 			/ ((float)Math.Pow (Vector2.Distance (transform.position, player.transform.position), 2)) * strength);
 		}
 	}
-
-
 }

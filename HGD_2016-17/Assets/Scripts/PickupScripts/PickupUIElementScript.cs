@@ -13,6 +13,7 @@ public class PickupUIElementScript : MonoBehaviour {
         get 
         {
             PlayerMovementScript ps = player.GetComponent<PlayerMovementScript>();
+            // If the player's pickup dictionary contains the type, return how many it contains
             return ps.pickupDictionary.ContainsKey(type) ? ps.pickupDictionary[type] : 0;
         }
     }

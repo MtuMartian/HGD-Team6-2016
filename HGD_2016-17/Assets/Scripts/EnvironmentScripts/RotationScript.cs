@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlatformRotationScript : MonoBehaviour {
+public class RotationScript : MonoBehaviour {
 
 	public GameObject parent;
 	public float rotateSpeed;
@@ -14,6 +14,5 @@ public class PlatformRotationScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.RotateAround (parent.transform.position, new Vector3 (0, 0, 1), rotateSpeed);
-
 	}
 }

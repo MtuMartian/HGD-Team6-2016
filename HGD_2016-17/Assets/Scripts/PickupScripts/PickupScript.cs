@@ -16,6 +16,7 @@ public class PickupScript : MonoBehaviour {
 	
 	}
 
+    // When the player enters the trigger collider, to the player to collect the pickup
     void OnTriggerEnter2D(Collider2D obj)
     {
         if (obj.gameObject == player)
@@ -25,6 +26,7 @@ public class PickupScript : MonoBehaviour {
         }
     }
 
+    // An enum to keep track of the types of pickup objects
     public enum PickupType
     {
         INCREASE,

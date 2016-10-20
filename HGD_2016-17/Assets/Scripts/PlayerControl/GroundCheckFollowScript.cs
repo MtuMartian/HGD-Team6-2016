@@ -5,6 +5,8 @@ public class GroundCheckFollowScript : MonoBehaviour {
 
 	private GameObject player;
 	public float offsetDistance = 3.8f;
+    
+    // Returns the current influencing sphere of the player
 	private GameObject currentSphere
 	{
 		get 
@@ -23,6 +25,7 @@ public class GroundCheckFollowScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (currentSphere != null) {
+            // Update the position of the ground check object if the player is within a gravity sphere
 			var offset = (player.transform.position - currentSphere.transform.position).normalized * offsetDistance;
 			transform.position = player.transform.position - offset;
 		}

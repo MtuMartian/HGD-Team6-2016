@@ -26,34 +26,23 @@ public class UIManagerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (gameManager.isPaused)
-            DisplayMenu();
-        else 
-            HideMenu();
+        SetMenuState(gameManager.isPaused);
 	}
 
-    public void DisplayMenu() {
-        resumeBtn.GetComponent<Image>().enabled = true;
-        resumeBtn.GetComponentInChildren<Text>().enabled = true;
-        restartBtn.GetComponent<Image>().enabled = true;
-        restartBtn.GetComponentInChildren<Text>().enabled = true;
-        mainMenuBtn.GetComponent<Image>().enabled = true;
-        mainMenuBtn.GetComponentInChildren<Text>().enabled = true;
-        quitBtn.GetComponent<Image>().enabled = true;
-        quitBtn.GetComponentInChildren<Text>().enabled = true;
+    public void SetMenuState(bool state)
+    {
+        resumeBtn.GetComponent<Image>().enabled = state;
+        resumeBtn.GetComponentInChildren<Text>().enabled = state;
+        restartBtn.GetComponent<Image>().enabled = state;
+        restartBtn.GetComponentInChildren<Text>().enabled = state;
+        mainMenuBtn.GetComponent<Image>().enabled = state;
+        mainMenuBtn.GetComponentInChildren<Text>().enabled = state;
+        quitBtn.GetComponent<Image>().enabled = state;
+        quitBtn.GetComponentInChildren<Text>().enabled = state;
     }
 
-    public void HideMenu() {
-        resumeBtn.GetComponent<Image>().enabled = false;
-        resumeBtn.GetComponentInChildren<Text>().enabled = false;
-        restartBtn.GetComponent<Image>().enabled = false;
-        restartBtn.GetComponentInChildren<Text>().enabled = false;
-        mainMenuBtn.GetComponent<Image>().enabled = false;
-        mainMenuBtn.GetComponentInChildren<Text>().enabled = false;
-        quitBtn.GetComponent<Image>().enabled = false;
-        quitBtn.GetComponentInChildren<Text>().enabled = false;
-    }
-
+    // Reveals the text elements and displays a message to the user.
+    // TODO: Make this account for if the game is paused (and menu is showing)
 	public void DisplayMessage(string message, string subMessage = "", int time = 0) {
 		mainText.GetComponent<Text>().text = message;
 		mainText.GetComponent<Text>().enabled = true;
@@ -61,6 +50,7 @@ public class UIManagerScript : MonoBehaviour {
 		subText.GetComponent<Text> ().enabled = true;
 	}
 
+    // Hides the text elements that display messages to the user
 	public void ClearMessage() {
 		mainText.GetComponent<Text>().text = "";
 		mainText.GetComponent<Text>().enabled = false;
