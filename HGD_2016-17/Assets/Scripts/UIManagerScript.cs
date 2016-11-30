@@ -5,6 +5,7 @@ using System.Collections;
 
 public class UIManagerScript : MonoBehaviour {
 
+	public Image container;
 	public Text mainText;
     public Text subText;
     public Button resumeBtn;
@@ -31,14 +32,10 @@ public class UIManagerScript : MonoBehaviour {
 
     public void SetMenuState(bool state)
     {
-        resumeBtn.GetComponent<Image>().enabled = state;
-        resumeBtn.GetComponentInChildren<Text>().enabled = state;
-        restartBtn.GetComponent<Image>().enabled = state;
-        restartBtn.GetComponentInChildren<Text>().enabled = state;
-        mainMenuBtn.GetComponent<Image>().enabled = state;
-        mainMenuBtn.GetComponentInChildren<Text>().enabled = state;
-        quitBtn.GetComponent<Image>().enabled = state;
-        quitBtn.GetComponentInChildren<Text>().enabled = state;
+		//container.GetComponent<Image>().enabled = state;
+		foreach (Transform child in container.transform) {
+			child.GetComponent<Image>().enabled = state;
+		}
     }
 
     // Reveals the text elements and displays a message to the user.
