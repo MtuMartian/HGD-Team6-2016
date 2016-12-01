@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\Rotate.cs" />
      <Compile Include="Assets\Scripts\SaveAndLoad.cs" />
      <Compile Include="Assets\Scripts\UIManagerScript.cs" />
+     <Compile Include="Assets\Scripts\vortex.cs" />
      <Compile Include="Assets\Sprites\EnvironmentSprites\ScrollUV.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
