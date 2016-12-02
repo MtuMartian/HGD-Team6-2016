@@ -4,7 +4,7 @@ using System.IO;
 
 public class GameManagerScript : MonoBehaviour {
 
-	public bool isPaused;
+	public bool isPaused = false;
 
 	// Use this for initialization
 	void Start () {
@@ -12,7 +12,12 @@ public class GameManagerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Space))
-			isPaused = false;
-	}
+        // Pressing the escape key will pause the game.
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            isPaused = !isPaused;
+        }
+        // Update the timescale depending on if the game is paused
+        Time.timeScale = isPaused ? 0 : 1;
+    }
 }
