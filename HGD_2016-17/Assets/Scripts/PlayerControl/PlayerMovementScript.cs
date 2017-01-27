@@ -41,6 +41,8 @@ public class PlayerMovementScript : MonoBehaviour {
 		influencingSpheres = new List<GravitySphereScript> ();
 		gameManager = GameObject.FindWithTag ("GameManager").GetComponent<GameManagerScript> ();
 		previousDrag = GetComponent<Rigidbody2D> ().drag;
+        if (!influencingSpheres.Any())
+            GetComponent<Rigidbody2D>().drag = 0f;
         pickupDictionary = new Dictionary<PickupScript.PickupType, int> ();
         foreach (PickupScript.PickupType type in Enum.GetValues(typeof(PickupScript.PickupType)))
             pickupDictionary.Add(type, 0);
