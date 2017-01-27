@@ -29,6 +29,7 @@ public class SpaceTensionSpawner : MonoBehaviour
             var position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             GameObject tensionObject = Instantiate(TetherPrefab, position, Quaternion.identity) as GameObject;
             var tensionScript = tensionObject.GetComponent<SpaceTensionObject>();
+            tensionScript.isPermanent = false;
             tensionScript.strength = strength;
             tensionScript.breakingDistance = breakingDistance;
             tensionScript.reversalDistance = reversalDistance;

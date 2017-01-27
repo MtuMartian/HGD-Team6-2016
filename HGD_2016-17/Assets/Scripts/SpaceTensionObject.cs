@@ -11,6 +11,8 @@ public class SpaceTensionObject : MonoBehaviour
     public float breakingDistance =25f;
     public float reversalDistance = 10f;
 
+    public bool isPermanent;
+
     private Vector3 velocity;
     private GameObject player;
     private LineRenderer tether;
@@ -23,7 +25,7 @@ public class SpaceTensionObject : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonUp(0))
+        if (!isPermanent && Input.GetMouseButtonUp(0))
         {
            Destroy(gameObject);
         }
@@ -46,23 +48,31 @@ public class SpaceTensionObject : MonoBehaviour
     {
         if (distance >= breakingDistance)
         {
-            Destroy(gameObject);
+            if (!isPermanent)
+                Destroy(gameObject);
             return 0f;
         }
         return (distance - reversalDistance);
     }
-
+    
     void UpdateTether()
     {
+        var distance = Math.Abs(Vector2.Distance(transform.position, player.transform.position));
+        if (distance >= breakingDistance)
+        {
+            tether.enabled = false;
+            return;
+        }
+        tether.enabled = true;
         List<Vector3> positions = new List<Vector3>();
         positions.Add(player.transform.position);
-        int iterations = 150;
+        int iterations = 250;
         for (int i = 0; i < iterations; i++)
         {
             var deltaPositions = player.transform.position - transform.position;
             var offSet = new Vector3(-deltaPositions.y, deltaPositions.x, player.transform.position.z);
             //var randomOffsetMultiplier = new UnityEngine.Random();
-            float multiplier = UnityEngine.Random.Range(-0.03f, 0.03f);
+            float multiplier = UnityEngine.Random.Range(-0.003f, 0.003f);
             offSet *= multiplier;
             positions.Add(player.transform.position - (player.transform.position - transform.position) * i / iterations + offSet);
         }
