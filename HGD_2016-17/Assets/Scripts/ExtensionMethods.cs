@@ -20,4 +20,14 @@ public static class ExtensionMethods
 		v.y = (sin * tx) + (cos * ty);
 		return v;
 	}
+
+    public static void LookAt2D(this Transform origin, Transform target)
+    {
+        float delX = target.position.x - origin.position.x;
+        float delY = target.position.y - origin.position.y;
+
+        float zRot = Mathf.Atan2(delY, delX);// * Mathf.Rad2Deg;
+        
+        origin.rotation.SetEulerRotation(origin.localRotation.x, origin.localRotation.y, zRot);
+    }
 }
