@@ -41,9 +41,9 @@ public class MusicLevel : MonoBehaviour {
                 current -= .25f;
                 setMudsicLvl(current);
             }
-            if (freq > 500)
+            if (freq > 1000)
             {
-                freq -= 10;
+                freq -= 1000;
                 MasterMixer.SetFloat("CutOff_LowPass", freq);
             }
 
@@ -59,9 +59,9 @@ public class MusicLevel : MonoBehaviour {
 
 
             }
-            if (freq != 5000)
+            if (freq != 22000.00)
             {
-                freq += 10;
+                freq += 1000;
                 MasterMixer.SetFloat("CutOff_LowPass", freq);
             }
             MasterMixer.SetFloat("LowPass_Resonance", 0f);
