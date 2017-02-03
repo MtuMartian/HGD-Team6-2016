@@ -24,6 +24,7 @@ public class TrampolineScript : MonoBehaviour
         obj.transform.GetComponent<Rigidbody2D>().AddForce(force * power);
 
         //animation
+        GetComponent<SpriteAnimator>().Animate();
     }
 
     void Animate(float scale)

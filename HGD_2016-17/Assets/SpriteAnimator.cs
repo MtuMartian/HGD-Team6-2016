@@ -8,6 +8,9 @@ public class SpriteAnimator : MonoBehaviour
     public List<Sprite> sprites;
     public float timePerFrame;
 
+    public bool isCyclic = true;
+    private bool isCurrentlyRunning = false;
+
     public int id = -1;
 
     private float timeSinceLastChange = 0f;
@@ -18,8 +21,10 @@ public class SpriteAnimator : MonoBehaviour
     {
         get
         {
-            Debug.Log(spriteIndex + " % " + sprites.Count);
-            return spriteIndex % sprites.Count;
+            var newIndex = spriteIndex % sprites.Count;
+            if (newIndex == 0 && spriteIndex != 0)
+                isCurrentlyRunning = false;
+            return newIndex;
         }
         set
         {
@@ -31,14 +36,22 @@ public class SpriteAnimator : MonoBehaviour
 	void Start () {
         spriteRenderer = GetComponent<SpriteRenderer>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        timeSinceLastChange += Time.deltaTime;
-	    if (timeSinceLastChange > timePerFrame)
+
+    // Update is called once per frame
+    void Update() {
+        if (isCyclic || isCurrentlyRunning)
         {
-            spriteRenderer.sprite = sprites[SpriteIndex++];
-            timeSinceLastChange %= timePerFrame;
+            timeSinceLastChange += Time.deltaTime;
+            if (timeSinceLastChange > timePerFrame)
+            {
+                spriteRenderer.sprite = sprites[SpriteIndex++];
+                timeSinceLastChange %= timePerFrame;
+            }
         }
 	}
+
+    public void Animate()
+    {
+        isCurrentlyRunning = true;
+    }
 }

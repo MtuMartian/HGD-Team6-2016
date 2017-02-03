@@ -34,7 +34,6 @@ public class SentryEnemyAI : BaseEnemyAI
     protected override void ChangeState(AIState newState)
     {
         base.ChangeState(newState);
-        Debug.Log("CURRENT STATE: " + newState);
         switch (newState)
         {
             case AIState.IDLE:
