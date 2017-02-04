@@ -25,13 +25,13 @@ public class LaserScript : MonoBehaviour
 
         transform.LookAt(player.transform);
         transform.rotation = new Quaternion(tempRot.x, tempRot.y, transform.rotation.z, tempRot.w);
-        GetComponent<Rigidbody2D>().velocity = (player.transform.position - sentry.transform.position).normalized * 40f;
+        GetComponent<Rigidbody2D>().velocity = (player.transform.position - sentry.transform.position).normalized * 60f;
         activated = true;
     }
 
-    void OnTriggerEnter2D(Collider2D obj)
+    void OnCollisionEnter2D(Collision2D obj)
     {
-        if (obj.gameObject != sentry && activated && !obj.isTrigger)
+        if (obj.gameObject != sentry && activated)
             Destroy(this.gameObject);
     }
 }
