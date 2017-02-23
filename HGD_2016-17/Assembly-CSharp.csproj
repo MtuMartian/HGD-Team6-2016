@@ -38,10 +38,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +49,11 @@
      <Compile Include="Assets\BasicMovement.cs" />
      <Compile Include="Assets\Scripts\CameraControl\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\CameraControl\CameraRotateScript.cs" />
+     <Compile Include="Assets\Scripts\EnemyAIs\AttachEnemyAI.cs" />
+     <Compile Include="Assets\Scripts\EnemyAIs\BaseEnemyAI.cs" />
+     <Compile Include="Assets\Scripts\EnemyAIs\ChaseEnemyAI.cs" />
+     <Compile Include="Assets\Scripts\EnemyAIs\LaserScript.cs" />
+     <Compile Include="Assets\Scripts\EnemyAIs\SentryEnemyAI.cs" />
      <Compile Include="Assets\Scripts\EnvironmentScripts\FireBallRotateScript.cs" />
      <Compile Include="Assets\Scripts\EnvironmentScripts\GoalScript.cs" />
      <Compile Include="Assets\Scripts\EnvironmentScripts\GravitySphereScript.cs" />
@@ -66,15 +71,11 @@
      <Compile Include="Assets\Scripts\PlayerControl\PlayerMovementScript.cs" />
      <Compile Include="Assets\Scripts\Rotate.cs" />
      <Compile Include="Assets\Scripts\SaveAndLoad.cs" />
+     <Compile Include="Assets\Scripts\SpaceTensionObject.cs" />
+     <Compile Include="Assets\Scripts\SpaceTensionSpawner.cs" />
      <Compile Include="Assets\Scripts\UIManagerScript.cs" />
      <Compile Include="Assets\Scripts\vortex.cs" />
      <Compile Include="Assets\Sprites\EnvironmentSprites\ScrollUV.cs" />
- <Reference Include="UnityEngine.UI">
- <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Networking">
- <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

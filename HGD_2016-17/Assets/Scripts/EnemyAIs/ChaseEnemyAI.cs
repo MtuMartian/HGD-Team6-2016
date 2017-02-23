@@ -8,7 +8,7 @@ public class ChaseEnemyAI : BaseEnemyAI
 {
     public AudioClip shake;
     public AudioClip attack;
-    public AudioSource es;
+    public AudioSource es= new AudioSource();
     public float chaseSpeed = 50f;
     private Vector3 shakeOffset = Vector3.one;
 
