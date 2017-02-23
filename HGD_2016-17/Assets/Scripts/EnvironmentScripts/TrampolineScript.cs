@@ -4,7 +4,8 @@ using System.Collections;
 public class TrampolineScript : MonoBehaviour
 {
     public float power;
-
+    public AudioClip jump_sound;
+    public AudioSource jump;
     // Use this for initialization
     void Start()
     {
@@ -24,12 +25,16 @@ public class TrampolineScript : MonoBehaviour
         obj.transform.GetComponent<Rigidbody2D>().AddForce(force * power);
 
         //animation
+          jump.clip = jump_sound; 
+          jump.Play();
         GetComponent<SpriteAnimator>().Animate();
     }
 
     void Animate(float scale)
     {
+      
         Vector3 normal = transform.localScale;
         transform.localScale = Vector3.Scale(normal, new Vector3(scale, scale, 1));
+        
     }
 }

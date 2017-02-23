@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Audio\MusicLevel.cs" />
+     <Compile Include="Assets\Audio\OrbSound.cs" />
      <Compile Include="Assets\BasicMovement.cs" />
      <Compile Include="Assets\PlayerOxygen.cs" />
      <Compile Include="Assets\Scripts\CameraControl\CameraFollow.cs" />

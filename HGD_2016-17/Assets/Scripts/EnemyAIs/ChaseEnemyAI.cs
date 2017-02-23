@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class ChaseEnemyAI : BaseEnemyAI
 {
+    public AudioClip shake;
+    public AudioClip attack;
+    public AudioSource es;
     public float chaseSpeed = 50f;
     private Vector3 shakeOffset = Vector3.one;
 
@@ -40,4 +43,5 @@ public class ChaseEnemyAI : BaseEnemyAI
         var body = GetComponent<Rigidbody2D>();
         body.AddForce(delPos * chaseSpeed);
     }
+
 }

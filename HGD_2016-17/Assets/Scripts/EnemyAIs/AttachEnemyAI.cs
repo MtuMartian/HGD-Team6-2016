@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class AttachEnemyAI : BaseEnemyAI
 {
+    public AudioClip shake;
+    public AudioClip attack;
+    public AudioSource es;
     private bool isAttached = false;
     private Vector3 shakeOffset = Vector3.one;
     public float chaseSpeed = 50f;
@@ -67,4 +70,22 @@ public class AttachEnemyAI : BaseEnemyAI
             isAttached = false;
         }
     }
+          protected override void ChangeState(AIState newState)
+    {
+        base.ChangeState(newState);
+        if (newState == AIState.ALERT)
+        {
+            es.clip = shake;
+            es.Play();
+        }
+        else if (newState == AIState.ATTACK)
+        {
+            es.clip = attack;
+            es.Play();
+        } else
+        {
+            es.Stop();
+        }
+    }
+    
 }
