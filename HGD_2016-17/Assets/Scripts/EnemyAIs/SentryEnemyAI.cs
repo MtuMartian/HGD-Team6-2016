@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class SentryEnemyAI : BaseEnemyAI
 {
+    public AudioClip fire;
+    public AudioSource es;
     public float laserCooldown = 4f; // Laser cooldown in seconds
     private float timeSinceLastLaser = 4f;
     public GameObject laserObject;
@@ -33,6 +35,7 @@ public class SentryEnemyAI : BaseEnemyAI
 
     protected override void ChangeState(AIState newState)
     {
+
         base.ChangeState(newState);
         switch (newState)
         {
@@ -45,6 +48,8 @@ public class SentryEnemyAI : BaseEnemyAI
                 break;
             case AIState.ATTACK:
                 // Fire a laser or something...
+                es.clip = fire;
+                es.Play();
                 GetComponent<SpriteRenderer>().color = Color.red;
                 GameObject laser = Instantiate(laserObject);
                 var laserScript = laser.GetComponent<LaserScript>();

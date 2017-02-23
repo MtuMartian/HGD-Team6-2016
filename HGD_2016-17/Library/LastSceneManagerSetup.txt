@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Prefab_Test.unity
+- path: Assets/Scenes/Display_Scene.unity
   isLoaded: 1
   isActive: 1
