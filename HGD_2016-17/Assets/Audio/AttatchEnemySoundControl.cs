@@ -13,10 +13,27 @@ public class AttatchEnemySoundControl : MonoBehaviour {
          GameObject[] gos  = GameObject.FindGameObjectsWithTag("AttatchEnemy");
         if (gos.Length >= 2)
         {
+            Debug.Log("there is more than 2 or equal to 2");
+            string stateone = gos[0].GetComponent<AttachEnemyAI>().WhatState();
             AudioSource one = gos[0].GetComponent<AudioSource>();
-            one.volume = .5f;
+            Debug.Log(stateone);
+            if (stateone =="Attack" | stateone == "Alert" )
+            {
+                Debug.Log("This is the changing the audio source");
+                one.volume = .3f;
+            } else
+            {
+                one.volume = 1f;
+            }
+            string statetwo = gos[1].GetComponent<AttachEnemyAI>().WhatState();
             AudioSource two = gos[1].GetComponent<AudioSource>();
-            two.volume = .5f;
+            if (statetwo == "Attack"  | statetwo == "Alert")
+            {
+                two.volume = .3f;
+            } else
+            {
+                two.volume = 1f;
+            }
         }
     }
 }

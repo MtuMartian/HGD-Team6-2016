@@ -77,37 +77,21 @@ public class AttachEnemyAI : BaseEnemyAI
         {
             es.clip = shake;
             es.Play();
+            state = "Alert";
         }
         else if (newState == AIState.ATTACK)
         {
             es.clip = attack;
             es.Play();
+            state = "Attack";
         } else
         {
             es.Stop();
+            state = "Idle";
         }
     }
-    private  void CheckState(AIState newState)
-    {
-        base.ChangeState(newState);
-        if (newState == AIState.ALERT)
-        {
 
-          getState("Alert"); 
-        }
-        else if (newState == AIState.ATTACK)
-        {
-            getState("Attack");
-        }
-        else
-        {
-            getState("Idle");
-        }
-    }
-    private  void getState(string state)
-    {
-        this.state = state;
-    }
+ 
     public string WhatState()
     {
         return state; 
