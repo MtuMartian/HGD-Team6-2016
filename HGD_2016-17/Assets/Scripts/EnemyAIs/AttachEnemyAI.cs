@@ -12,7 +12,7 @@ public class AttachEnemyAI : BaseEnemyAI
     private bool isAttached = false;
     private Vector3 shakeOffset = Vector3.one;
     public float chaseSpeed = 50f;
-
+    private string state; 
 
     protected override void IdleAction()
     {
@@ -87,5 +87,29 @@ public class AttachEnemyAI : BaseEnemyAI
             es.Stop();
         }
     }
-    
+    private  void CheckState(AIState newState)
+    {
+        base.ChangeState(newState);
+        if (newState == AIState.ALERT)
+        {
+
+          getState("Alert"); 
+        }
+        else if (newState == AIState.ATTACK)
+        {
+            getState("Attack");
+        }
+        else
+        {
+            getState("Idle");
+        }
+    }
+    private  void getState(string state)
+    {
+        this.state = state;
+    }
+    public string WhatState()
+    {
+        return state; 
+    }
 }

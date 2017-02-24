@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: bb46285866ddf2e409fcf4a1b4306237
-timeCreated: 1485282669
+timeCreated: 1487975610
 licenseType: Pro
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - shake: {fileID: 8300000, guid: 58d9ba380d2e2b345bf817d3756148ee, type: 3}
+  - attack: {fileID: 8300000, guid: d25b0c332fd96504cbb203922a3ec904, type: 3}
+  - es: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
