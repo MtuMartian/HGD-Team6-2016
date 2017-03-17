@@ -72,7 +72,7 @@ public class PlayerMovementScript : MonoBehaviour {
             UsePickup(PickupScript.PickupType.REVERSE);
     }
 
-	private void MoveLeft() {
+	public void MoveLeft() {
 		if (influencingSpheres.Any ()) {
 			var sphere = influencingSpheres.First ();
 			Vector3 v3 = (transform.position - sphere.transform.position);
@@ -85,7 +85,7 @@ public class PlayerMovementScript : MonoBehaviour {
 		}
 	}
 
-	private void MoveRight() {
+	public void MoveRight() {
 		if (influencingSpheres.Any ()) {
 			var sphere = influencingSpheres.First ();
 			Vector3 v3 = (transform.position - sphere.transform.position);

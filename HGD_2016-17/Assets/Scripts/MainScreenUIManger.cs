@@ -13,7 +13,7 @@ public class MainScreenUIManger : MonoBehaviour {
 	void Start () {
         newGameBtn.onClick.AddListener(delegate
         {
-            SceneManager.LoadScene("MilesTutorial01");
+            SceneManager.LoadScene("MilesLevel02");
             Debug.Log("New Game Button was pressed");
         });
         resumeBtn.onClick.AddListener(delegate

@@ -13,7 +13,7 @@ public class TractorBeamScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         // Apply a constant force on each object within the list of contained objects
 		objects.ForEach (obj => {
 			Vector2 force = new Vector2 (
