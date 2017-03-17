@@ -6,8 +6,6 @@ using System.Collections;
 public class UIManagerScript : MonoBehaviour {
 
 	public Image container;
-	public Text mainText;
-    public Text subText;
     public Button resumeBtn;
     public Button restartBtn;
     public Button mainMenuBtn;
@@ -21,8 +19,6 @@ public class UIManagerScript : MonoBehaviour {
         restartBtn.onClick.AddListener(() => SceneManager.LoadScene(SceneManager.GetActiveScene().name));
         mainMenuBtn.onClick.AddListener(() => SceneManager.LoadScene("TitleMenu"));
         quitBtn.onClick.AddListener(() => Application.Quit());
-
-        ClearMessage();
 	}
 	
 	// Update is called once per frame
@@ -32,26 +28,9 @@ public class UIManagerScript : MonoBehaviour {
 
     public void SetMenuState(bool state)
     {
-		//container.GetComponent<Image>().enabled = state;
 		foreach (Transform child in container.transform) {
-			child.GetComponent<Image>().enabled = state;
+			child.GetComponent<Button>().enabled = state;
+            child.GetComponent<Image>().color = state ? Color.white : Color.clear;
 		}
     }
-
-    // Reveals the text elements and displays a message to the user.
-    // TODO: Make this account for if the game is paused (and menu is showing)
-	public void DisplayMessage(string message, string subMessage = "", int time = 0) {
-		mainText.GetComponent<Text>().text = message;
-		mainText.GetComponent<Text>().enabled = true;
-		subText.GetComponent<Text> ().text = subMessage;
-		subText.GetComponent<Text> ().enabled = true;
-	}
-
-    // Hides the text elements that display messages to the user
-	public void ClearMessage() {
-		mainText.GetComponent<Text>().text = "";
-		mainText.GetComponent<Text>().enabled = false;
-		subText.GetComponent<Text> ().text = "";
-		subText.GetComponent<Text> ().enabled = false;
-	}
 }

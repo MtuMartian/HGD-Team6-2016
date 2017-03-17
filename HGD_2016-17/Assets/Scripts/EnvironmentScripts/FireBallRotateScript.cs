@@ -30,8 +30,6 @@ public class FireBallRotateScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D obj) {
         // Check if the player was hit
 		if (obj.gameObject == player) {
-            // Alert the player that the game has ended
-			uiManagerScript.DisplayMessage ("Game Over!", "Press Space to continue...", 10000);
             // Pause the game. TODO: This should restart the level with some sort of indication/delay
 			gameManager.isPaused = true;
 		}
