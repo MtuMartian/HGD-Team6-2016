@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class SpriteAnimator : MonoBehaviour 
 {
@@ -10,6 +11,7 @@ public class SpriteAnimator : MonoBehaviour
 
     public bool isCyclic = true;
     private bool isCurrentlyRunning = false;
+    private Func<bool> finishedRunningCallback;
 
     public int id = -1;
 
@@ -23,7 +25,11 @@ public class SpriteAnimator : MonoBehaviour
         {
             var newIndex = spriteIndex % sprites.Count;
             if (newIndex == 0 && spriteIndex != 0)
+            {
                 isCurrentlyRunning = false;
+                if (finishedRunningCallback != null)
+                    finishedRunningCallback();
+            }
             return newIndex;
         }
         set
@@ -50,8 +56,14 @@ public class SpriteAnimator : MonoBehaviour
         }
 	}
 
-    public void Animate()
+    public void Animate(Func<bool> callback = null)
     {
         isCurrentlyRunning = true;
+        finishedRunningCallback = callback;
+    }
+
+    public bool IsDone()
+    {
+        return isCurrentlyRunning;
     }
 }
