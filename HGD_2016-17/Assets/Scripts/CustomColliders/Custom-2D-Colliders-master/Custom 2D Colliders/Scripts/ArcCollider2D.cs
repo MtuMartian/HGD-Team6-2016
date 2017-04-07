@@ -35,7 +35,7 @@ using System.Collections.Generic;
 [RequireComponent(typeof(EdgeCollider2D))]
 public class ArcCollider2D : MonoBehaviour {
 
-    [Range(1, 25)]
+    [Range(1, 150)]
     public float radius = 3;
     [Range(10,90)]
     public int smoothness = 24;
