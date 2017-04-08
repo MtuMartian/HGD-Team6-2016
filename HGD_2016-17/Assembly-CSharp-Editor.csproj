@@ -6,10 +6,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{12FA48AC-3F22-1C37-5506-FEEB18688AF9}</ProjectGuid>
+    <ProjectGuid>{8E612CD5-D928-2F9F-0D39-DC288BDB5B8A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>Assets</BaseDirectory>
@@ -45,60 +45,49 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Audio\MusicLevel.cs" />
-     <Compile Include="Assets\KeyHolder.cs" />
-     <Compile Include="Assets\KeyScript.cs" />
-     <Compile Include="Assets\LineRendererFromArc.cs" />
-     <Compile Include="Assets\LineRendererFromBezier.cs" />
-     <Compile Include="Assets\MobileControlsScript.cs" />
-     <Compile Include="Assets\PlayerMovementButton.cs" />
-     <Compile Include="Assets\PlayerOxygen.cs" />
-     <Compile Include="Assets\Scripts\BezierCollider2D.cs" />
-     <Compile Include="Assets\Scripts\BezierCollider2DEditor.cs" />
-     <Compile Include="Assets\Scripts\CameraControl\CameraFollow.cs" />
-     <Compile Include="Assets\Scripts\CameraControl\CameraRotateScript.cs" />
-     <Compile Include="Assets\Scripts\CustomColliders\Custom-2D-Colliders-master\Custom 2D Colliders\Scripts\ArcCollider2D.cs" />
-     <Compile Include="Assets\Scripts\CustomColliders\Custom-2D-Colliders-master\Custom 2D Colliders\Scripts\BezierCurveCollider2D.cs" />
-     <Compile Include="Assets\Scripts\CustomColliders\Custom-2D-Colliders-master\Custom 2D Colliders\Scripts\CapsuleCollider2D.cs" />
-     <Compile Include="Assets\Scripts\CustomColliders\Custom-2D-Colliders-master\Custom 2D Colliders\Scripts\EllipseCollider2D.cs" />
-     <Compile Include="Assets\Scripts\CustomColliders\Custom-2D-Colliders-master\Custom 2D Colliders\Scripts\RoundedBoxCollider2D.cs" />
-     <Compile Include="Assets\Scripts\CustomColliders\Custom-2D-Colliders-master\Custom 2D Colliders\Scripts\StarCollider2D.cs" />
-     <Compile Include="Assets\Scripts\EnemyAIs\AttachEnemyAI.cs" />
-     <Compile Include="Assets\Scripts\EnemyAIs\BaseEnemyAI.cs" />
-     <Compile Include="Assets\Scripts\EnemyAIs\ChaseEnemyAI.cs" />
-     <Compile Include="Assets\Scripts\EnemyAIs\LaserScript.cs" />
-     <Compile Include="Assets\Scripts\EnemyAIs\SentryEnemyAI.cs" />
-     <Compile Include="Assets\Scripts\EnvironmentScripts\FireBallRotateScript.cs" />
-     <Compile Include="Assets\Scripts\EnvironmentScripts\GoalScript.cs" />
-     <Compile Include="Assets\Scripts\EnvironmentScripts\GravitySphereScript.cs" />
-     <Compile Include="Assets\Scripts\EnvironmentScripts\RandomStarBackground.cs" />
-     <Compile Include="Assets\Scripts\EnvironmentScripts\RotationScript.cs" />
-     <Compile Include="Assets\Scripts\EnvironmentScripts\TractorBeamScript.cs" />
-     <Compile Include="Assets\Scripts\EnvironmentScripts\TrampolineScript.cs" />
-     <Compile Include="Assets\Scripts\ExtensionMethods.cs" />
-     <Compile Include="Assets\Scripts\Follow.cs" />
-     <Compile Include="Assets\Scripts\GameManagerScript.cs" />
-     <Compile Include="Assets\Scripts\MainScreenUIManger.cs" />
-     <Compile Include="Assets\Scripts\PickupScripts\PickupScript.cs" />
-     <Compile Include="Assets\Scripts\PickupScripts\PickupUIElementScript.cs" />
-     <Compile Include="Assets\Scripts\PlayerControl\GroundCheckFollowScript.cs" />
-     <Compile Include="Assets\Scripts\PlayerControl\PlayerMovementScript.cs" />
-     <Compile Include="Assets\Scripts\Rotate.cs" />
-     <Compile Include="Assets\Scripts\SaveAndLoad.cs" />
-     <Compile Include="Assets\Scripts\SpaceTensionObject.cs" />
-     <Compile Include="Assets\Scripts\SpaceTensionSpawner.cs" />
-     <Compile Include="Assets\Scripts\UIManagerScript.cs" />
-     <Compile Include="Assets\Scripts\vortex.cs" />
-     <Compile Include="Assets\SpriteAnimator.cs" />
-     <Compile Include="Assets\Sprites\EnvironmentSprites\ScrollUV.cs" />
-     <Compile Include="Assets\UnlockableWallScript.cs" />
-     <Compile Include="Assets\bouncinessscript.cs" />
+     <Compile Include="Assets\Scripts\CustomColliders\Custom-2D-Colliders-master\Custom 2D Colliders\Scripts\Editor\ArcCollider2D_Editor.cs" />
+     <Compile Include="Assets\Scripts\CustomColliders\Custom-2D-Colliders-master\Custom 2D Colliders\Scripts\Editor\BezierCurveCollider2D_Editor.cs" />
+     <Compile Include="Assets\Scripts\CustomColliders\Custom-2D-Colliders-master\Custom 2D Colliders\Scripts\Editor\CapsuleCollider2D_Editor.cs" />
+     <Compile Include="Assets\Scripts\CustomColliders\Custom-2D-Colliders-master\Custom 2D Colliders\Scripts\Editor\EllipseCollider2D_Editor.cs" />
+     <Compile Include="Assets\Scripts\CustomColliders\Custom-2D-Colliders-master\Custom 2D Colliders\Scripts\Editor\RoundedBoxCollider2D_Editor.cs" />
+     <Compile Include="Assets\Scripts\CustomColliders\Custom-2D-Colliders-master\Custom 2D Colliders\Scripts\Editor\StarCollider2D_Editor.cs" />
+ <Reference Include="UnityEditor.Advertisements">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.EditorTestsRunner">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/UnityEditor.EditorTestsRunner.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.Networking">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.TreeEditor">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+ <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/2015/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp.csproj">
+      <Project>{12FA48AC-3F22-1C37-5506-FEEB18688AF9}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
