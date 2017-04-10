@@ -38,14 +38,14 @@ public class SentryEnemyAI : BaseEnemyAI
         {
             case AIState.IDLE:
                 // Indicate that turret is doing nothing
-                GetComponent<SpriteRenderer>().color = Color.white;
+                //GetComponent<SpriteRenderer>().color = Color.white;
                 break;
             case AIState.ALERT:
                 // Indicate that the turret is alert
                 break;
             case AIState.ATTACK:
                 // Fire a laser or something...
-                GetComponent<SpriteRenderer>().color = Color.red;
+                //GetComponent<SpriteRenderer>().color = Color.red;
                 GameObject laser = Instantiate(laserObject);
                 var laserScript = laser.GetComponent<LaserScript>();
                 laserScript.Init(this.gameObject);
