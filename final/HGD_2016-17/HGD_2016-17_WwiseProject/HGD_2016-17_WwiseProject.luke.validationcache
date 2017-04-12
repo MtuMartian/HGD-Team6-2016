@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationCache Version="1" SchemaVersion="75">
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1806529212" DateHigh="30585798"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="1807569271" DateHigh="30585798"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Audio Devices\Default Work Unit.wwu" DateLow="1808049299" DateHigh="30585798"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Control Surface Sessions\Default Work Unit.wwu" DateLow="1807999296" DateHigh="30585798"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Conversion Settings\Default Work Unit.wwu" DateLow="1807739281" DateHigh="30585798"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Conversion Settings\Factory Conversion Settings.wwu" DateLow="3143819950" DateHigh="30580605"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1807629275" DateHigh="30585798"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Effects\Default Work Unit.wwu" DateLow="1807229252" DateHigh="30585798"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Effects\Factory Effects.wwu" DateLow="3171941558" DateHigh="30580605"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Events\Default Work Unit.wwu" DateLow="1806579215" DateHigh="30585798"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Game Parameters\Default Work Unit.wwu" DateLow="1807189250" DateHigh="30585798"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\HGD_2016-17_WwiseProject.wproj" DateLow="2963575391" DateHigh="30585798"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1807479266" DateHigh="30585798"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1806469208" DateHigh="30585798"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Mixing Sessions\Default Work Unit.wwu" DateLow="1807689278" DateHigh="30585798"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Modulators\Default Work Unit.wwu" DateLow="1807819286" DateHigh="30585798"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Presets\Default Work Unit.wwu" DateLow="1807319257" DateHigh="30585798"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Queries\Default Work Unit.wwu" DateLow="1807429263" DateHigh="30585798"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Queries\Factory Queries.wwu" DateLow="3142559877" DateHigh="30580605"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="1807129246" DateHigh="30585798"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1807379260" DateHigh="30585798"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\States\Default Work Unit.wwu" DateLow="1807049242" DateHigh="30585798"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Switches\Default Work Unit.wwu" DateLow="1806999239" DateHigh="30585798"/>
+	<ValidationCacheItem File="C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\Triggers\Default Work Unit.wwu" DateLow="1807529269" DateHigh="30585798"/>
+</ValidationCache>
