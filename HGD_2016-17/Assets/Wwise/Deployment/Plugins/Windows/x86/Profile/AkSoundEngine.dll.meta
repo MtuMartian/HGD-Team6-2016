@@ -1,0 +1,54 @@
+fileFormatVersion: 2
+guid: 468461c21a38f7840889024c090c32c0
+timeCreated: 1492009965
+licenseType: Free
+PluginImporter:
+  serializedVersion: 1
+  iconMap: {}
+  executionOrder: {}
+  isPreloaded: 0
+  platformData:
+    Any:
+      enabled: 0
+      settings: {}
+    Editor:
+      enabled: 1
+      settings:
+        CPU: X86
+        DefaultValueInitialized: true
+        OS: Windows
+    Linux:
+      enabled: 0
+      settings:
+        CPU: None
+    Linux64:
+      enabled: 0
+      settings:
+        CPU: None
+    LinuxUniversal:
+      enabled: 0
+      settings:
+        CPU: None
+    OSXIntel:
+      enabled: 0
+      settings:
+        CPU: None
+    OSXIntel64:
+      enabled: 0
+      settings:
+        CPU: None
+    OSXUniversal:
+      enabled: 0
+      settings:
+        CPU: None
+    Win:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+    Win64:
+      enabled: 0
+      settings:
+        CPU: None
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
