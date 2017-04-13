@@ -1,0 +1,28 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1062027766	KeyGet			\Default Work Unit\KeyGet	
+	1078999204	OxygenAlarmStop			\Default Work Unit\OxygenAlarmStop	
+	3009932360	BouncePad			\Default Work Unit\BouncePad	
+	3208684526	KeyGetOpen			\Default Work Unit\KeyGetOpen	
+	3251619871	TetherStart			\Default Work Unit\TetherStart	
+	3493773797	TetherStop			\Default Work Unit\TetherStop	
+	3828426776	OxygenAlarmStart			\Default Work Unit\OxygenAlarmStart	
+	4273985747	TractorBeam			\Default Work Unit\TractorBeam	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	51662966	Menu_Navigation_1	C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\.cache\Windows\SFX\Menu_Navigation_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu_Navigation_1		252412
+	103022573	Wall Impact	C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\.cache\Windows\SFX\Wall Impact_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Wall Impact		115264
+	108353818	Menu_Navigation_2	C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\.cache\Windows\SFX\Menu_Navigation_2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu_Navigation_2		252412
+	121313913	Menu_Game_Options_1	C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\.cache\Windows\SFX\Menu_Game_Options_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu_Game_Options_1		514204
+	198047891	Mushroom_1	C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\.cache\Windows\SFX\Mushroom_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Mushroom_1		705744
+	219026751	Mushroom_3	C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\.cache\Windows\SFX\Mushroom_3_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Mushroom_3		705744
+	276770593	Electric_Whip_1	C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\.cache\Windows\SFX\Electric_Whip_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Electric_Whip_1		2349564
+	592854528	Warp Pad	C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\.cache\Windows\SFX\Warp Pad_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Warp Pad		1058544
+	612368094	Enemy Impact	C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\.cache\Windows\SFX\Enemy Impact_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy Impact		103924
+	667870470	Oxygen Alarm	C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\.cache\Windows\SFX\Oxygen Alarm_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oxygen Alarm		566096
+	697764783	Mushroom_2	C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\.cache\Windows\SFX\Mushroom_2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Mushroom_2		705744
+	849895341	Menu_Selection_1	C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\.cache\Windows\SFX\Menu_Selection_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu_Selection_1		514204
+	880981095	Menu_Game_Start_1	C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\.cache\Windows\SFX\Menu_Game_Start_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu_Game_Start_1		776348
+	912511518	Key Pickup	C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\.cache\Windows\SFX\Key Pickup_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Key Pickup		668996
+	1009580298	Key Wall Unlock	C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\.cache\Windows\SFX\Key Wall Unlock_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Key Wall Unlock		463196
+	1053368440	Booster_1	C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\.cache\Windows\SFX\Booster_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Booster_1		1038844
+

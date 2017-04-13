@@ -11,6 +11,7 @@ public class PlayerOxygen : MonoBehaviour
     private float OxygenPercentage = 100f;
     private Canvas canvas;
     public Image greenBar;
+    private bool playingSound = false;
 	// Use this for initialization
 	void Start () {
         player = GameObject.FindWithTag("Player");
@@ -25,6 +26,17 @@ public class PlayerOxygen : MonoBehaviour
             IncreaseOxygen();
         else
             DecreaseOxygen();
+            if (OxygenPercentage < 40f && playingSound == false) {
+                playingSound = true;
+                AkSoundEngine.PostEvent("OxygenAlarmStart", this.gameObject);
+            } 
+            if (OxygenPercentage > 40f && playingSound == true) {
+                playingSound = false;
+                     AkSoundEngine.PostEvent("OxygenAlarmStop", this.gameObject);
+            }
+                      if (OxygenPercentage <= 0f && playingSound == true) {
+                                   AkSoundEngine.PostEvent("OxygenAlarmStop", this.gameObject);
+                      }
 	}
 
     void DecreaseOxygen()

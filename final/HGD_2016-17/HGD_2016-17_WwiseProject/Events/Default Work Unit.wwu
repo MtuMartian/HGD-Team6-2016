@@ -1,6 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{DE15D3B3-6C1B-45B1-AD8B-526F36DE7B8B}" SchemaVersion="75">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{DE15D3B3-6C1B-45B1-AD8B-526F36DE7B8B}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{DE15D3B3-6C1B-45B1-AD8B-526F36DE7B8B}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="BouncePad" ID="{5EE5A321-1000-433B-8B1C-56F0D7058980}">
+					<ChildrenList>
+						<Action Name="Play" ID="{ED219E54-0F8A-4527-AAED-BB7EFA33E1F5}" ShortID="999339041" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{8D480997-1AA1-4764-9E27-6FFCB63FB032}" Global="false">
+									<ObjectRef Name="Mushroom_1" ID="{35DACD90-0977-4054-AFB8-091B443512AE}" WorkUnitID="{4AC90FB8-27D5-4706-AC03-B4B5CBD932AB}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="TetherStart" ID="{19F5D23E-423F-4B78-9689-8D7E7F939AB2}">
+					<ChildrenList>
+						<Action Name="Play" ID="{F4D79B07-79C7-4084-BCBD-8055E65A0B2F}" ShortID="944272084" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{E5400481-0197-49A1-87D1-D8B4506FFEF1}" Global="false">
+									<ObjectRef Name="Electric_Whip_1" ID="{B9DBD5AD-41EF-4A8D-9EBA-598D8313A368}" WorkUnitID="{4AC90FB8-27D5-4706-AC03-B4B5CBD932AB}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="KeyGet" ID="{03EC52AE-0641-40B8-8142-5E70DB20E0C9}">
+					<ChildrenList>
+						<Action Name="Play" ID="{BD4E43F5-B578-4489-895E-EF0F713BADD0}" ShortID="110961852" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{510FFD52-D1A5-4E13-B743-A1FA81A0F333}" Global="false">
+									<ObjectRef Name="Key Pickup" ID="{AAB759D4-40C1-4F4D-9816-84D9A685E153}" WorkUnitID="{4AC90FB8-27D5-4706-AC03-B4B5CBD932AB}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="KeyGeteOpen" ID="{81263977-D2D4-4934-A2C4-5DB4614E7111}">
+					<ChildrenList>
+						<Action Name="Play" ID="{AFEE952B-543A-4E2A-B582-0D423941AF33}" ShortID="248371196" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{29C6864A-FC1C-468C-AB8E-06A29C1AC616}" Global="false">
+									<ObjectRef Name="Key Wall Unlock" ID="{53D46B0B-4BCA-4850-A592-A358079BE3B0}" WorkUnitID="{4AC90FB8-27D5-4706-AC03-B4B5CBD932AB}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="TractorBeam" ID="{C92266BD-68DA-4CCE-B254-C9FED1835D2D}">
+					<ChildrenList>
+						<Action Name="Play" ID="{8D9D6096-EF2F-420F-B38C-1D5745AB39D7}" ShortID="851641331" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{BE771C7B-72D9-436E-A38A-7CFC97E041D6}" Global="false">
+									<ObjectRef Name="Warp Pad" ID="{55BBE416-6E63-498D-804A-EFC38A169D76}" WorkUnitID="{4AC90FB8-27D5-4706-AC03-B4B5CBD932AB}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="TetherStop" ID="{044A1C0E-7B9F-4248-A441-F0EC3F40FBF1}">
+					<ChildrenList>
+						<Action Name="Stop" ID="{732CDBFC-4519-4C3B-815D-1FED2BA0D9CA}" ShortID="963017280" Type="Stop" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{C3AACD35-C4A6-4775-BE6A-76053D0FEABA}" Global="false">
+									<ObjectRef Name="Electric_Whip_1" ID="{B9DBD5AD-41EF-4A8D-9EBA-598D8313A368}" WorkUnitID="{4AC90FB8-27D5-4706-AC03-B4B5CBD932AB}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="OxygenAlarmStart" ID="{861E1000-6BC2-43F7-B448-3E6C02A93D7E}">
+					<ChildrenList>
+						<Action Name="Play" ID="{E8C9A675-957A-4EB3-9421-37215B23E9DA}" ShortID="573744611" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{601D6144-128E-4534-82F1-CE3418BC8672}" Global="false">
+									<ObjectRef Name="Oxygen Alarm" ID="{1CDA221C-5544-4CBA-979C-CE4DB7298CE8}" WorkUnitID="{4AC90FB8-27D5-4706-AC03-B4B5CBD932AB}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="OxygenAlarmStop" ID="{94AF33E4-F00C-4748-BE01-1A252EF4D5C7}">
+					<ChildrenList>
+						<Action Name="Stop" ID="{1C45DAFF-F076-4114-BB19-7E76F3FC422F}" ShortID="746900794" Type="Stop" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{F348E95C-4627-42C7-9DA4-2FA2A8FA64C9}" Global="false">
+									<ObjectRef Name="Oxygen Alarm" ID="{1CDA221C-5544-4CBA-979C-CE4DB7298CE8}" WorkUnitID="{4AC90FB8-27D5-4706-AC03-B4B5CBD932AB}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

@@ -6,10 +6,11 @@ public class TractorBeamScript : MonoBehaviour {
 
 	public float strength;
 	private List<GameObject> objects;
-
+	private GameObject player;
 	// Use this for initialization
 	void Start () {
 		objects = new List<GameObject> ();
+		player = GameObject.FindWithTag("Player");
 	}
 	
 	// Update is called once per frame
@@ -26,6 +27,9 @@ public class TractorBeamScript : MonoBehaviour {
     // When an object enters the trigger collider, add it to the list of objects
 	void OnTriggerEnter2D(Collider2D obj) {
 		objects.Add (obj.gameObject);
+		if (obj.gameObject == player) {
+			AkSoundEngine.PostEvent("TractorBeam", this.gameObject);
+		}
 	}
     
     // When an object leaves the trigger collider, remove it from the list of objects

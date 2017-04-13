@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="120">
+	<RootPaths>
+		<ProjectRoot>C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\luke\OrbitalDrift-sound\final\HGD_2016-17\HGD_2016-17_WwiseProject\GeneratedSoundBanks\Windows\</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="534561221" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\MainSoundBank</ObjectPath>
+			<ShortName>MainSoundBank</ShortName>
+			<Path>MainSoundBank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3009932360" Name="BouncePad" ObjectPath="\Events\Default Work Unit\BouncePad"/>
+				<Event Id="1062027766" Name="KeyGet" ObjectPath="\Events\Default Work Unit\KeyGet"/>
+				<Event Id="3208684526" Name="KeyGetOpen" ObjectPath="\Events\Default Work Unit\KeyGetOpen"/>
+				<Event Id="3828426776" Name="OxygenAlarmStart" ObjectPath="\Events\Default Work Unit\OxygenAlarmStart"/>
+				<Event Id="1078999204" Name="OxygenAlarmStop" ObjectPath="\Events\Default Work Unit\OxygenAlarmStop" MaxAttenuation="0.000000"/>
+				<Event Id="3251619871" Name="TetherStart" ObjectPath="\Events\Default Work Unit\TetherStart"/>
+				<Event Id="3493773797" Name="TetherStop" ObjectPath="\Events\Default Work Unit\TetherStop" MaxAttenuation="0.000000"/>
+				<Event Id="4273985747" Name="TractorBeam" ObjectPath="\Events\Default Work Unit\TractorBeam"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="51662966" Language="SFX">
+					<ShortName>Menu_Navigation_1.wav</ShortName>
+					<Path>SFX\Menu_Navigation_1_9E69E797.wem</Path>
+				</File>
+				<File Id="103022573" Language="SFX">
+					<ShortName>Wall Impact.wav</ShortName>
+					<Path>SFX\Wall Impact_9E69E797.wem</Path>
+				</File>
+				<File Id="108353818" Language="SFX">
+					<ShortName>Menu_Navigation_2.wav</ShortName>
+					<Path>SFX\Menu_Navigation_2_9E69E797.wem</Path>
+				</File>
+				<File Id="121313913" Language="SFX">
+					<ShortName>Menu_Game_Options_1.wav</ShortName>
+					<Path>SFX\Menu_Game_Options_1_9E69E797.wem</Path>
+				</File>
+				<File Id="198047891" Language="SFX">
+					<ShortName>Mushroom_1.wav</ShortName>
+					<Path>SFX\Mushroom_1_9E69E797.wem</Path>
+				</File>
+				<File Id="219026751" Language="SFX">
+					<ShortName>Mushroom_3.wav</ShortName>
+					<Path>SFX\Mushroom_3_9E69E797.wem</Path>
+				</File>
+				<File Id="276770593" Language="SFX">
+					<ShortName>Electric_Whip_1.wav</ShortName>
+					<Path>SFX\Electric_Whip_1_9E69E797.wem</Path>
+				</File>
+				<File Id="592854528" Language="SFX">
+					<ShortName>Warp Pad.wav</ShortName>
+					<Path>SFX\Warp Pad_9E69E797.wem</Path>
+				</File>
+				<File Id="612368094" Language="SFX">
+					<ShortName>Enemy Impact.wav</ShortName>
+					<Path>SFX\Enemy Impact_9E69E797.wem</Path>
+				</File>
+				<File Id="667870470" Language="SFX">
+					<ShortName>Oxygen Alarm.wav</ShortName>
+					<Path>SFX\Oxygen Alarm_4B8CC0C5.wem</Path>
+				</File>
+				<File Id="697764783" Language="SFX">
+					<ShortName>Mushroom_2.wav</ShortName>
+					<Path>SFX\Mushroom_2_9E69E797.wem</Path>
+				</File>
+				<File Id="849895341" Language="SFX">
+					<ShortName>Menu_Selection_1.wav</ShortName>
+					<Path>SFX\Menu_Selection_1_9E69E797.wem</Path>
+				</File>
+				<File Id="880981095" Language="SFX">
+					<ShortName>Menu_Game_Start_1.wav</ShortName>
+					<Path>SFX\Menu_Game_Start_1_9E69E797.wem</Path>
+				</File>
+				<File Id="912511518" Language="SFX">
+					<ShortName>Key Pickup.wav</ShortName>
+					<Path>SFX\Key Pickup_9E69E797.wem</Path>
+				</File>
+				<File Id="1009580298" Language="SFX">
+					<ShortName>Key Wall Unlock.wav</ShortName>
+					<Path>SFX\Key Wall Unlock_9E69E797.wem</Path>
+				</File>
+				<File Id="1053368440" Language="SFX">
+					<ShortName>Booster_1.wav</ShortName>
+					<Path>SFX\Booster_1_9E69E797.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

@@ -19,6 +19,7 @@ public class SpaceTensionObject : MonoBehaviour
 
     void Start()
     {
+         AkSoundEngine.PostEvent("TetherStart", this.gameObject);
         player = GameObject.FindWithTag("Player");
         tether = GetComponent<LineRenderer>();
     }
@@ -27,6 +28,7 @@ public class SpaceTensionObject : MonoBehaviour
     {
         if (!isPermanent && Input.GetMouseButtonUp(0))
         {
+             AkSoundEngine.PostEvent("TetherStop", this.gameObject);
            Destroy(gameObject);
         }
 

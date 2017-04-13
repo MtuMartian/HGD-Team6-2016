@@ -24,12 +24,15 @@ public class TrampolineScript : MonoBehaviour
         obj.transform.GetComponent<Rigidbody2D>().AddForce(force * power);
 
         //animation
+         AkSoundEngine.PostEvent("BouncePad", this.gameObject);
         GetComponent<SpriteAnimator>().Animate();
     }
 
     void Animate(float scale)
     {
+             
         Vector3 normal = transform.localScale;
         transform.localScale = Vector3.Scale(normal, new Vector3(scale, scale, 1));
+  
     }
 }

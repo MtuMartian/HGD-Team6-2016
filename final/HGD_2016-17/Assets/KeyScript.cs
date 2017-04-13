@@ -29,8 +29,10 @@ public class KeyScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D obj)
     {
+       
         if (!isAttached && obj.gameObject == player)
         {
+            AkSoundEngine.PostEvent("KeyGet", this.gameObject);
             AttachToPlayer();
         }
     }

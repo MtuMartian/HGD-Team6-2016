@@ -29,6 +29,7 @@ public class UnlockableWallScript : MonoBehaviour
 
     public void Unlock()
     {
+        AkSoundEngine.PostEvent("KeyGetOpen", this.gameObject);
         player.GetComponent<KeyHolder>().RemoveKey(key);
         Destroy(key.gameObject);
         var animator = GetComponent<SpriteAnimator>();
