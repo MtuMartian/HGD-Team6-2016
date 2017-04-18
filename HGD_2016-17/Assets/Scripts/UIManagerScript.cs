@@ -5,7 +5,7 @@ using System.Collections;
 
 public class UIManagerScript : MonoBehaviour {
 
-	public Image container;
+	public GameObject container;
     public Button resumeBtn;
     public Button restartBtn;
     public Button mainMenuBtn;
@@ -28,9 +28,6 @@ public class UIManagerScript : MonoBehaviour {
 
     public void SetMenuState(bool state)
     {
-		foreach (Transform child in container.transform) {
-			child.GetComponent<Button>().enabled = state;
-            child.GetComponent<Image>().color = state ? Color.white : Color.clear;
-		}
+		container.SetActive (state);
     }
 }
