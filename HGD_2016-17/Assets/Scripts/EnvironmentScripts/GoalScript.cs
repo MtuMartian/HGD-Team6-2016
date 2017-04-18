@@ -17,8 +17,30 @@ public class GoalScript : MonoBehaviour
     {
         triggered = false;
         player = GameObject.FindWithTag("Player");
+		Debug.Log (nextLevelName);
+		if (string.IsNullOrEmpty (nextLevelName)) 
+		{
+			nextLevelName = parseNextLevelName ();
+		}
         //uiManagerScript = uiManager.GetComponent<UIManagerScript>();
     }
+
+	string parseNextLevelName()
+	{
+		var levelInfo = SceneManager.GetActiveScene().name.Split ('_');
+		int section = int.Parse (levelInfo [0].Replace ("Level", ""));
+		int level = int.Parse (levelInfo [1]);
+		if (level >= 8) {
+			level = 1;
+			section++;
+		} 
+		else 
+		{
+			level++;
+		}
+		return "Level" + section + "_" + level;
+		
+	}
 
     // Update is called once per frame
     void FixedUpdate()

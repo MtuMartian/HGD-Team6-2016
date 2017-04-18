@@ -24,14 +24,13 @@ SOFTWARE.
 You can contact me by email at guyquad27@gmail.com or on Reddit at https://www.reddit.com/user/GuyQuad
 */
 
-
-#if UNITY_EDITOR
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+#if UNITY_EDITOR
 [AddComponentMenu("Physics 2D/Arc Collider 2D")]
-
+#endif
 [RequireComponent(typeof(EdgeCollider2D))]
 public class ArcCollider2D : MonoBehaviour {
 
@@ -76,4 +75,5 @@ public class ArcCollider2D : MonoBehaviour {
         return points.ToArray();
     }
 }
-#endif
+//#endif
+

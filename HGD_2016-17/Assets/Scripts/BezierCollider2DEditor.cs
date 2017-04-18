@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#if DEBUG
+using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(BezierCollider2D))]
@@ -83,3 +84,4 @@ public class BezierCollider2DEditor : Editor
     }
 
 }
+#endif
